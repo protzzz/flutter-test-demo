@@ -1,6 +1,8 @@
+import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:test_app/core/res/media.dart';
 import 'package:test_app/core/res/styles/app_styles.dart';
+import 'package:test_app/core/widgets/app_double_text.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -8,8 +10,12 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppStyles.bgColor,
       body: ListView(
         children: [
+          const SizedBox(
+            height: 40,
+          ),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
@@ -20,11 +26,17 @@ class HomeScreen extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text("Good morning!", style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.w500
-                        ),),
-                        const SizedBox(height: 5, ), //horizontal space between the widgets
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        const Text(
+                          "Good morning!",
+                          style: TextStyle(
+                              fontSize: 17, fontWeight: FontWeight.w500),
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ), //horizontal space between the widgets
                         Text("Book tickets!", style: AppStyles.headLineStyle1),
                       ],
                     ),
@@ -33,26 +45,40 @@ class HomeScreen extends StatelessWidget {
                       height: 50,
                       // color: Colors.red,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        image: const DecorationImage(
-                          image: AssetImage(AppMedia.logo)
-                        )
-                      ),
+                          borderRadius: BorderRadius.circular(10),
+                          image: const DecorationImage(
+                              image: AssetImage(AppMedia.logo))),
                     )
                   ],
                 ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Search-icon"),
-                    Text("Empty page"),
-                  ],
-                )
+                const SizedBox(height: 25),
+                Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                  ),
+                  child: const Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Icon(
+                        FluentSystemIcons.ic_fluent_search_regular,
+                        color: Color(0xFFBFC205),
+                      ),
+                      SizedBox(width: 7),
+                      Text("Search")
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                const AppDoubleText(
+                    bigText: "Upcoming Flights", smallText: "View All"),
               ],
             ),
           ),
-          // Container(child: const Text("Good morning!"),),
-          // Container(child: const Text("Book tickets!"),),
         ],
       ),
     );
