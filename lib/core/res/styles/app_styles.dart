@@ -7,9 +7,16 @@ class AppStyles {
   static Color textColor = const Color(0xFF3b3b3b);
   static Color bgColor = const Color(0xFFeeedf2);
   static Color ticketBlue = const Color(0xFF526799);
+  static Color ticketOrange = const Color(0xFFF37B67);
 
   static TextStyle textStyle =
       TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: textColor);
+  
+  static TextStyle textStyle2 =
+      TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: textColor);
+
+  static TextStyle textStyle3 =
+      TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: textColor);
 
   static TextStyle headLineStyle1 =
       TextStyle(fontSize: 26, fontWeight: FontWeight.bold, color: textColor);
@@ -19,4 +26,5 @@ class AppStyles {
 
   static TextStyle headLineStyle3 =
       TextStyle(fontSize: 21, fontWeight: FontWeight.bold, color: textColor);
+
 }
