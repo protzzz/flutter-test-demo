@@ -160,7 +160,7 @@ class TicketView extends StatelessWidget {
                       ),
                       Expanded(child: Container()),
                       Text(
-                        "Number",
+                        "№",
                         style:
                             AppStyles.textStyle2.copyWith(color: Colors.white),
                       ),

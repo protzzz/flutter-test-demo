@@ -80,7 +80,15 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                const TicketView()
+                const SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      TicketView(),
+                      TicketView()
+                    ],
+                  ),
+                )
               ],
             ),
           ),
