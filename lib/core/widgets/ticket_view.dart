@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/core/res/styles/app_styles.dart';
+import 'package:test_app/core/widgets/app_column_text_layout.dart';
 import 'package:test_app/core/widgets/app_layoutbuilder_widget.dart';
 import 'package:test_app/core/widgets/big_circle.dart';
 import 'package:test_app/core/widgets/big_dot.dart';
+import 'package:test_app/core/widgets/text_style_fourth.dart';
+import 'package:test_app/core/widgets/text_style_third.dart';
 
 class TicketView extends StatelessWidget {
   const TicketView({super.key});
@@ -29,10 +32,9 @@ class TicketView extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Text(
-                        "NYC",
-                        style: AppStyles.headLineStyle2
-                            .copyWith(color: Colors.white),
+                      const SizedBox(
+                        // width: 100,
+                        child: TextStyleThird(text: "NYC"),
                       ),
                       Expanded(child: Container()),
                       const BigDot(),
@@ -58,39 +60,26 @@ class TicketView extends StatelessWidget {
                       ),
                       const BigDot(),
                       Expanded(child: Container()),
-                      Text(
-                        "LDN",
-                        style: AppStyles.headLineStyle2
-                            .copyWith(color: Colors.white),
+                      const SizedBox(
+                        child: TextStyleThird(text: "LDN"),
                       ),
                     ],
                   ),
                   const SizedBox(height: 3),
                   Row(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         width: 100,
-                        child: Text(
-                          "New-York",
-                          style: AppStyles.textStyle3
-                              .copyWith(color: Colors.white),
-                        ),
+                        child: TextStyleFourth(text: "New-York") 
                       ),
                       Expanded(child: Container()),
-                      Text(
-                        "8H 30M",
-                        style:
-                            AppStyles.textStyle3.copyWith(color: Colors.white),
+                      const SizedBox(
+                        child: TextStyleFourth(text: "8H 30M", align: TextAlign.center,),
                       ),
                       Expanded(child: Container()),
-                      SizedBox(
+                      const SizedBox(
                         width: 100,
-                        child: Text(
-                          "London",
-                          textAlign: TextAlign.end,
-                          style: AppStyles.textStyle3
-                              .copyWith(color: Colors.white),
-                        ),
+                        child: TextStyleFourth(text: "New-York", align: TextAlign.end) 
                       ),
                     ],
                   )
@@ -121,51 +110,16 @@ class TicketView extends StatelessWidget {
                   borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(21),
                       bottomRight: Radius.circular(21))),
-              child: Column(
+              child: const Column(
                 children: [
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        "1 MAY",
-                        style:
-                            AppStyles.textStyle3.copyWith(color: Colors.white),
-                      ),
-                      Expanded(child: Container()),
-                      Text(
-                        "08:00 AM",
-                        style:
-                            AppStyles.textStyle3.copyWith(color: Colors.white),
-                      ),
-                      Expanded(child: Container()),
-                      Text(
-                        "23",
-                        style:
-                            AppStyles.textStyle3.copyWith(color: Colors.white),
-                      ),
+                      AppColumnTextLayout(topText: "1 MAY", bottomText: "DATE"),
+                      AppColumnTextLayout(topText: "08:00 AM", bottomText: "Departure time", alignment: CrossAxisAlignment.center,),
+                      AppColumnTextLayout(topText: "23", bottomText: "№", alignment: CrossAxisAlignment.end,)
                     ],
                   ),
-                  const SizedBox(height: 3),
-                  Row(
-                    children: [
-                      Text(
-                        "Date",
-                        style:
-                            AppStyles.textStyle2.copyWith(color: Colors.white),
-                      ),
-                      Expanded(child: Container()),
-                      Text(
-                        "Departure time",
-                        style:
-                            AppStyles.textStyle2.copyWith(color: Colors.white),
-                      ),
-                      Expanded(child: Container()),
-                      Text(
-                        "№",
-                        style:
-                            AppStyles.textStyle2.copyWith(color: Colors.white),
-                      ),
-                    ],
-                  )
                 ],
               ),
             ),
