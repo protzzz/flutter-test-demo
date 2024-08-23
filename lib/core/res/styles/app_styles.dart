@@ -27,4 +27,7 @@ class AppStyles {
 
   static TextStyle headLineStyle3 =
       TextStyle(fontSize: 21, fontWeight: FontWeight.bold, color: textColor);
+
+  // static TextStyle headLineStyle4 =
+  //     TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: textColor);
 }
