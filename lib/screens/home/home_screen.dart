@@ -5,7 +5,7 @@ import 'package:test_app/core/utils/all_json.dart';
 import 'package:test_app/core/res/styles/app_styles.dart';
 import 'package:test_app/core/widgets/app_double_text.dart';
 import 'package:test_app/core/widgets/ticket_view.dart';
-import 'package:test_app/screens/widgets/hotel.dart';
+import 'package:test_app/screens/home/widgets/hotel.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -105,10 +105,11 @@ class HomeScreen extends StatelessWidget {
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children: [
-                      Hotel(),
-                    ]
-                  ),
+                    children: hotelList
+                        // .take(2)
+                        .map((singleHotel) => Hotel(hotel: singleHotel))
+                        .toList(),
+                  )
                 ),
                 // Hotel()
               ],
