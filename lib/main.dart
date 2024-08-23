@@ -18,17 +18,6 @@ class MyApp extends StatelessWidget {
         "/":(context) => const BottomNavBar(),
         "/all_tickets":(context) => const AllTickets(),
       },
-      
-      // title: 'Flutter Demo',
-      // theme: ThemeData(),
-      // home: Scaffold(
-      //   appBar: AppBar(
-      //     backgroundColor: Colors.red,
-      //   ),
-      //   body: const Center(
-      //     child: Text("Hello, Flutter!"),
-      //   ),
-      // )
     );
   }
 }
