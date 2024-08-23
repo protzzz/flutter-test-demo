@@ -5,6 +5,7 @@ import 'package:test_app/core/utils/all_json.dart';
 import 'package:test_app/core/res/styles/app_styles.dart';
 import 'package:test_app/core/widgets/app_double_text.dart';
 import 'package:test_app/core/widgets/ticket_view.dart';
+import 'package:test_app/screens/widgets/hotel.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -21,6 +22,7 @@ class HomeScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -76,8 +78,11 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(
                   height: 40,
                 ),
-                const AppDoubleText(
-                    bigText: "Upcoming Flights", smallText: "View All"),
+                AppDoubleText(
+                  bigText: "Upcoming Flights",
+                  smallText: "View All",
+                  func: () => Navigator.pushNamed(context, "/all_tickets"),
+                ),
                 const SizedBox(
                   height: 20,
                 ),
@@ -89,7 +94,23 @@ class HomeScreen extends StatelessWidget {
                         .map((singleTicket) => TicketView(ticket: singleTicket))
                         .toList(),
                   ),
-                )
+                ),
+                const SizedBox(height: 20),
+                AppDoubleText(
+                  bigText: "Hotels",
+                  smallText: "View All",
+                  func: () => Navigator.pushNamed(context, "/all_tickets"),
+                ),
+                const SizedBox(height: 20),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Hotel(),
+                    ]
+                  ),
+                ),
+                // Hotel()
               ],
             ),
           ),
