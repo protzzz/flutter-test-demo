@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/core/res/styles/app_styles.dart';
+import 'package:test_app/core/utils/all_json.dart';
+import 'package:test_app/core/widgets/ticket_view.dart';
 import 'package:test_app/screens/search/widgets/app_ticket_tabs.dart';
 
 class TicketScreen extends StatelessWidget {
@@ -19,8 +21,11 @@ class TicketScreen extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           const AppTicketTabs(firstTab: "Upcoming", secondTab: "Previous"),
-          const SizedBox(height: 10),
-          
+          const SizedBox(height: 20),
+          Container(
+            padding: const EdgeInsets.only(left: 16),
+            child: TicketView(ticket: ticketList[0], isColor: true,)
+          )
         ],
       ),
     );
