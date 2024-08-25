@@ -10,7 +10,8 @@ import 'package:test_app/core/widgets/text_style_third.dart';
 class TicketView extends StatelessWidget {
   final Map<String, dynamic> ticket;
   final bool wholeScreen;
-  const TicketView({super.key, required this.ticket, this.wholeScreen = false});
+  final bool? isColor;
+  const TicketView({super.key, required this.ticket, this.wholeScreen = false, this.isColor});
 
   @override
   Widget build(BuildContext context) {
@@ -20,13 +21,15 @@ class TicketView extends StatelessWidget {
       width: size.width * 0.85,
       height: 189,
       child: Container(
-        margin: EdgeInsets.only(right: wholeScreen == true?0:16),
+        margin: EdgeInsets.only(right: wholeScreen == true ? 0 : 16),
         child: Column(
           children: [
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                  color: AppStyles.ticketBlue,
+                  color: isColor == null 
+                      ? AppStyles.ticketBlue
+                      : AppStyles.ticketColor,
                   borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(21),
                       topRight: Radius.circular(21))),
@@ -34,7 +37,7 @@ class TicketView extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      TextStyleThird(text: ticket["from"]["code"]),
+                      TextStyleThird(text: ticket["from"]["code"], isColor: isColor),
                       Expanded(child: Container()),
                       const BigDot(),
                       Expanded(
