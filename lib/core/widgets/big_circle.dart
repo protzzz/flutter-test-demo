@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/core/res/styles/app_styles.dart';
 
 class BigCircle extends StatelessWidget {
   const BigCircle({super.key, required this.isRight, this.isColor});

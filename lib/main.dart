@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         // "/all_tickets":(context) => const AllTickets(),
         AppRoutes.homePage:(context) => const BottomNavBar(),
         AppRoutes.allTickets:(context) => const AllTickets(),
-        AppRoutes.ticketView:(context) => const TicketScreen()
+        AppRoutes.ticketScreen:(context) => const TicketScreen()
       },
     );
   }
