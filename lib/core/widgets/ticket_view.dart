@@ -75,6 +75,7 @@ class TicketView extends StatelessWidget {
                   ),
                   const SizedBox(height: 3),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       TextStyleFourth(
                           text: ticket["from"]["name"], isColor: isColor),
