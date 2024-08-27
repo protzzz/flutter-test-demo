@@ -5,6 +5,7 @@ import 'package:test_app/core/utils/all_json.dart';
 import 'package:test_app/core/res/styles/app_styles.dart';
 import 'package:test_app/core/widgets/app_double_text.dart';
 import 'package:test_app/core/widgets/app_routes.dart';
+import 'package:test_app/core/widgets/heading_text.dart';
 import 'package:test_app/core/widgets/ticket_view.dart';
 import 'package:test_app/screens/home/widgets/hotel.dart';
 
@@ -28,21 +29,21 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Column(
+                    const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const SizedBox(
+                      children: <Widget>[
+                        SizedBox(
                           height: 8,
                         ),
-                        const Text(
+                        Text(
                           "Good morning!",
                           style: TextStyle(
                               fontSize: 17, fontWeight: FontWeight.w500),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: 5,
                         ), //horizontal space between the widgets
-                        Text("Book tickets!", style: AppStyles.headLineStyle1),
+                        HeadingText(text: "Book tickets!", isColor: false)
                       ],
                     ),
                     Container(
